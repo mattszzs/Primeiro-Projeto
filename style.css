@@ -1,0 +1,604 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Variáveis de Cores e Estilos */
+:root {
+  --primary-color: #a84ae2;
+  --primary-hover-color: #7e32b7;
+  --background-color: #111;
+  --surface-color: #222;
+  --text-color: #fff;
+  --card-border-radius: 8px;
+  --button-border-radius: 5px;
+  --image-border-radius: 10px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+nav {
+  background-color: var(--surface-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Opcional: tornar a navegação fixa (sticky) */
+  top: 0;
+  z-index: 100; /* Garante que a navegação fique acima de outro conteúdo */
+}
+
+nav a {
+  color: var(--text-color);
+  margin: 0 10px;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--button-border-radius);
+}
+
+/* Melhoria de acessibilidade para navegação por teclado */
+nav a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem; /* Preenchimento aumentado */
+  background: linear-gradient(to right, #7b00ff, #bb4a09, #000000);
+  color: var(--text-color);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+    margin-bottom: 2.5rem; /* Adiciona espaço entre as seções */
+}
+
+section h2 {
+    margin-bottom: 1.5rem; /* Adiciona espaço abaixo dos títulos das seções */
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.players-grid {
+  display: grid;
+  /* Tamanho mínimo ligeiramente menor */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem; /* Espaçamento aumentado */
+  margin-top: 1rem;
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem; /* Espaçamento aumentado */
+  margin-top: 1rem;
+}
+
+.grid-menu img {
+  display: block;
+  max-width: 100%;
+  margin: 1rem auto; /* Adicionada margem superior/inferior */
+  height: auto;
+  border-radius: var(--image-border-radius);
+  transition: transform 0.3s ease; /* Transição mais suave */
+}
+
+.grid-menu img:hover {
+  transform: scale(1.05); /* Escala ligeiramente reduzida */
+}
+
+.player-card {
+  background-color: var(--surface-color);
+  padding: 1.5rem; /* Preenchimento aumentado */
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.player-card:hover {
+    transform: translateY(-5px); /* Adiciona efeito sutil ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+/* Estilo para as imagens dentro do player-card */
+.player-card img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do card */
+    max-width: 200%; /* Garante que a imagem não ultrapasse a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Opcional: arredondar as bordas da imagem */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin-bottom: 0.8rem; /* Adiciona espaço entre a imagem e o texto */
+}
+.player-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.player-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+article {
+  background-color: var(--surface-color);
+  border-radius: var(--card-border-radius);
+  padding: 1.5rem; /* Preenchimento aumentado */
+  text-align: center;
+  display: flex; /* Usa flexbox para melhor alinhamento */
+  flex-direction: column;
+  justify-content: space-between; /* Empurra o botão para baixo */
+}
+
+/* Seleciona o nome do produto/plano */
+article p:first-of-type {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.preco {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0; /* Margem adicionada */
+}
+
+button {
+  margin-top: 1rem; /* Garante margem consistente */
+  padding: 0.7rem 1.2rem; /* Preenchimento ligeiramente maior */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--primary-hover-color);
+  transform: scale(1.03); /* Adiciona escala sutil ao passar o mouse */
+}
+
+/* Melhoria de acessibilidade para navegação por teclado */
+button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+/* Específicos da Seção de Notícias */
+.news-grid { /* Layout em grade opcional para notícias */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.news {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  /* Espaço entre itens de notícia se não usar grade */
+  margin-bottom: 1.5rem;
+}
+
+.news img {
+  display: block;
+  max-width: 100%; /* Permite que a imagem ocupe a largura total */
+  height: auto; /* Mantém a proporção da imagem */
+  max-height: 300px; /* Limita a altura da imagem */
+  object-fit: cover; /* Cobre a área de forma agradável */
+  margin: 1rem auto;
+  border-radius: var(--image-border-radius);
+  transition: transform 0.3s ease;
+}
+
+.news img:hover {
+  transform: scale(1.03); /* Escala consistente ao passar o mouse */
+}
+
+.news h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.news p {
+  color: var(--text-color);
+}
+
+/* Estilo do Link de Contato */
+#contato a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+#contato a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização do Carrinho */
+#cart {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: var(--card-border-radius);
+  width: 280px; /* Ligeiramente mais largo */
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  z-index: 1000;
+  border-top: 3px solid var(--primary-color); /* Adiciona uma borda superior */
+}
+
+#cart h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#cart p, #cart ul {
+  color: var(--text-color);
+}
+
+#cart ul {
+  list-style: none;
+  margin-bottom: 1rem;
+  max-height: 150px; /* Limita altura e permite rolagem */
+  overflow-y: auto;
+}
+
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Adiciona espaço entre os itens da lista */
+  font-size: 0.9rem;
+}
+
+/* Estiliza botão remover */
+#cart li button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    margin-top: 0; /* Sobrescreve margem padrão do botão */
+    background-color: #555; /* Cor diferente para remover */
+}
+#cart li button:hover {
+    background-color: #800; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* Estiliza linha do total */
+#cart p {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Estilos do Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* Sobreposição mais escura */
+  /* Adiciona animação */
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.modal-content {
+  background-color: #fff;
+   /* Texto mais escuro para legibilidade em fundo branco */
+  color: #333;
+  margin: 15% auto; /* Ajusta margem vertical */
+  padding: 30px; /* Preenchimento aumentado */
+  border: none; /* Remove borda padrão */
+  border-radius: var(--card-border-radius);
+  width: 90%;
+  max-width: 450px; /* Largura máxima ligeiramente maior */
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+   /* Adiciona animação */
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+.modal button {
+  margin-top: 1.5rem; /* Mais espaço acima dos botões do modal */
+}
+
+/* Específicos do Modal de Login */
+.login-modal-content label {
+    display: block;
+    margin-bottom: 0.3rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.login-modal-content input[type="email"],
+.login-modal-content input[type="password"] {
+  width: 100%;
+  padding: 0.8rem; /* Preenchimento aumentado */
+  margin-bottom: 1rem; /* Espaço entre os inputs */
+  border-radius: var(--button-border-radius);
+  border: 1px solid #ccc;
+}
+
+/* Estilização Específica para TODAS as Mensagens em Modais */
+
+/* Modal de Confirmação de Item Adicionado */
+#cart-modal .modal-content {
+    background-color: #000; /* Fundo preto */
+    color: var(--primary-color); /* Texto roxo (usando a variável) */
+    border: 1px solid var(--primary-color); /* Borda roxa opcional */
+}
+/* Ajuste do Botão Dentro do Modal de Confirmação */
+#cart-modal .modal-content button {
+    background-color: var(--surface-color); /* Fundo cinza escuro (para contraste) */
+    color: var(--text-color); /* Texto branco */
+    border: 1px solid var(--primary-color); /* Borda roxa opcional */
+}
+#cart-modal .modal-content button:hover {
+    background-color: #444; /* Cinza um pouco mais claro no hover */
+    color: var(--text-color);
+}
+
+/* Modal de Confirmação de Sócio */
+#joinModal .modal-content {
+    background-color: #000; /* Fundo preto */
+    color: var(--primary-color); /* Texto roxo (usando a variável) */
+    border: 1px solid var(--primary-color); /* Borda roxa opcional */
+    padding: 25px; /* Ajuste o padding se necessário */
+}
+/* Ajuste do Botão Dentro do Modal de Sócio */
+#joinModal .modal-content button {
+    background-color: var(--surface-color); /* Fundo cinza escuro (para contraste) */
+    color: var(--text-color); /* Texto branco */
+    border: 1px solid var(--primary-color); /* Borda roxa opcional */
+}
+#joinModal .modal-content button:hover {
+    background-color: #444; /* Cinza um pouco mais claro no hover */
+    color: var(--text-color);
+}
+
+/* Mensagem de Status no Modal de Login */
+/* O modal de login em si continua com fundo branco */
+#loginMsg {
+    background-color: #000; /* Fundo preto APENAS para a mensagem */
+    color: var(--primary-color); /* Texto roxo padrão para a mensagem */
+    border: 1px solid var(--primary-color); /* Borda roxa */
+    padding: 10px 15px; /* Preenchimento interno */
+    margin-top: 1rem; /* Espaço acima da mensagem */
+    border-radius: var(--button-border-radius); /* Bordas arredondadas */
+    min-height: 1.2em; /* Garante espaço mesmo vazia */
+    /* A cor do texto (verde/vermelho) definida pelo JS ainda funcionará */
+}
+
+/* Mensagem de Carrinho Vazio */
+#cart-items .cart-empty-message {
+    background-color: #000; /* Fundo preto */
+    color: var(--primary-color); /* Texto roxo */
+    padding: 0.8rem; /* Adiciona um pouco de preenchimento */
+    text-align: center;
+    border-radius: var(--button-border-radius); /* Bordas arredondadas */
+    font-style: italic; /* Estilo itálico opcional */
+    border: 1px solid var(--primary-color); /* Borda roxa opcional */
+    margin: 0; /* Remove margens padrão se houver */
+}
+
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: var(--surface-color); /* Combina com a navegação */
+  color: var(--text-color);
+  border-top: 1px solid #444; /* Borda superior sutil */
+}
+
+/* Design Responsivo */
+@media (max-width: 768px) {
+  .players-grid, .grid-menu, .news-grid {
+    grid-template-columns: 1fr; /* Empilha as colunas */
+  }
+
+  nav {
+    /* Permite que o menu se posicione absolutamente relativo à navegação */
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o hambúrguer */
+    z-index: 101; /* Garante que o botão toggle fique acima do dropdown */
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--surface-color);
+    position: absolute;
+    top: 100%; /* Posiciona abaixo da barra de navegação */
+    left: 0; /* Alinha à esquerda */
+    width: 100%;
+    padding: 1rem 0; /* Adiciona preenchimento */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  #nav-menu.active {
+    display: flex; /* Mostra o menu quando ativo */
+  }
+
+  nav a {
+    display: block;
+    /* Ajusta margem para layout vertical */
+    margin: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  #cart {
+    width: 90%; /* Torna o carrinho mais largo no mobile */
+    max-width: 280px;
+    bottom: 1rem;
+    right: 5%; /* Centraliza ligeiramente */
+    left: 5%;
+  }
+
+  .modal-content {
+    margin: 20% auto; /* Ajusta margem para telas menores */
+    padding: 20px;
+    width: 85%;
+  }
+
+  /* Ajusta padding do modal de login em telas menores */
+  .login-modal-content {
+      padding: 20px;
+  }
+
+  /* Ajusta padding dos modais de mensagem em telas menores */
+   #cart-modal .modal-content, #joinModal .modal-content {
+       padding: 20px;
+   }
+}
+/* ESCUDO FIXO */
+.escudo {
+  position: fixed;         /* Mantém fixo na tela */
+  top: 0px;               /* Distância do topo */
+  right: 1px;             /* Distância da direita */
+  width: 100px;            /* Tamanho controlado */
+  height: auto;            /* Mantém proporção */
+  z-index: 1000;           /* Fica acima dos outros elementos */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Suavidade em hover */
+}
+
+.escudo:hover {
+  transform: scale(1.1);   /* Leve aumento */
+  filter: brightness(1.2); /* Realce visual */
+}
+/* Fundo Animado com Estrelas Roxas */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#a84ae2 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: -1;
+  animation: estrelas 30s linear infinite;
+  opacity: 0.1; /* Suave para não atrapalhar leitura */
+  pointer-events: none; /* Permite clicar em conteúdo normalmente */
+}
+
+@keyframes estrelas {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+.carousel-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.player-card {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 1rem;
+  background: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+.player-card h3 {
+  color: var(--primary-color);
+}
+.player-card p {
+  color:var(--primary-color)
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color:rgb(218, 112, 13);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgb(218, 112, 13); /* Cor de fundo ao passar o mouse */
+}
+

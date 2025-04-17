@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sunset Titans - Time Profissional de Futebol - Raça, Amor, Paixão" />
+  <meta name="keywords" content="futebol, time, Sunset Titans, esporte, profissional" />
+  <meta name="author" content="Matheus Frazão, Arthur Sanchez, Iury Kroker" />
+  <title>Sunset Titans - Time de Futebol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="escudo">
+  <img src="imagens/Escudo.png" alt="Escudo Sunset Titans" class="escudo">
+  </div>
+
+
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">&#9776;</button>
+    <div id="nav-menu">
+      <a href="#Início">Início</a>
+      <a href="#camisas">Camisas</a>
+      <a href="#socios">Sócio-Torcedor</a>
+      <a href="#Jogadores">Jogadores</a>
+      <a href="#noticias">Notícias</a>
+      <a href="#contato">Contato</a>
+      <a href="#login" onclick="openModal('loginModal')">Login</a>
+    </div>
+  </nav>
+
+  <header id="Início">
+    <h1>Sunset Titans</h1>
+    <p>Raça, Amor, Paixão</p>
+    <p>Time Profissional de Futebol</p>
+    <p>Fundado em 1900</p>
+    <p id="boasVindas"></p>
+  </header>
+
+  <main class="container">
+
+    <section>
+        <h2>Sobre Nós</h2>
+        <p>Fundado em 1900, o Sunset Titans é um clube com uma rica história de paixão pelo futebol e dedicação à nossa comunidade. Competimos com raça e buscamos a glória em cada partida, sempre honrando nossas cores e nossa torcida.</p>
+    </section>
+
+    <section id="camisas">
+        <h2>Compre sua Camisa</h2>
+        <div class="grid-menu">
+          <article>
+            <p>Camisa Casa</p>
+            <p class="preco">R$239,90</p>
+            <img src="imagens/Imagen camisa n1.png" alt="Camisa titular do Sunset Titans" loading="lazy" />
+            <button class="buy-btn" data-produto="Camisa Casa" data-preco="239.90">Comprar</button>
+          </article>
+          <article>
+            <p>Camisa Fora</p>
+            <p class="preco">R$ 179,90</p>
+            <img src="imagens/Imagen camisa n2.png" alt="Camisa reserva do Sunset Titans" loading="lazy" />
+             <button class="buy-btn" data-produto="Camisa Fora" data-preco="179.90">Comprar</button>
+          </article>
+          <article>
+            <p>Camisa Treino</p>
+            <p class="preco">R$ 139,90</p>
+            <img src="imagens/Imagen camisa n3.png" alt="Camisa de treino do Sunset Titans" loading="lazy" />
+             <button class="buy-btn" data-produto="Camisa Treino" data-preco="139.90">Comprar</button>
+          </article>
+          <article>
+            <p>Camisa Goleiro</p>
+            <p class="preco">R$ 159,90</p>
+            <img src="imagens/Imagen camisa n4.png" alt="Camisa de goleiro do Sunset Titans" loading="lazy" />
+             <button class="buy-btn" data-produto="Camisa Goleiro" data-preco="159.90">Comprar</button>
+          </article>
+        </div>
+
+      <section id="socios">
+        <h2>Seja Sócio-Torcedor</h2>
+        <div class="grid-menu">
+          <article>
+            <p>Plano Diamante</p>
+            <img src="imagens/socio 1.png" alt="Banner Sócio Diamante" loading="lazy" />
+             <button class="join-member-btn" data-plan="Plano Diamante">Quero Ser Sócio</button>
+            <p class="preco">R$ 99,90/mês</p>
+          </article>
+          <article>
+            <p>Plano Ouro</p>
+            <img src="imagens/socio 2.png" alt="Banner Sócio Ouro" loading="lazy" />
+            <button class="join-member-btn" data-plan="Plano Ouro">Quero Ser Sócio</button>
+            <p class="preco">R$ 49,90/mês</p>
+          </article>
+          <article>
+            <p>Plano Prata</p>
+            <img src="imagens/socio 3.png" alt="Banner Sócio Prata" loading="lazy" />
+            <button class="join-member-btn" data-plan="Plano Prata">Quero Ser Sócio</button>
+            <p class="preco">R$ 29,90/mês</p>
+          </article>
+          <article>
+            <p>Plano Bronze</p>
+            <img src="imagens/socio 4.png" alt="Banner Sócio Bronze" loading="lazy" />
+            <button class="join-member-btn" data-plan="Plano Bronze">Quero Ser Sócio</button>
+            <p class="preco">R$ 19,90/mês</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="jogadores">
+        <h2 class="secao-titulo">Elenco Sunset Titans</h2>
+        <div class="carousel-container">
+          <button class="carousel-btn left" onclick="moverCarrossel(-1)">&#10094;</button>
+          <div class="carousel-slide" id="carousel-slide"></div>
+          <button class="carousel-btn right" onclick="moverCarrossel(1)">&#10095;</button>
+        </div>
+      </section>
+      
+
+      <section id="noticias">
+        <h2>Notícias</h2>
+        <div class="news-grid">
+            <div class="news">
+              <h3>Vitória épica na estreia!</h3>
+              <p>Sunset Titans vence de virada e emociona torcida.</p>
+              <img src="imagens/virada.png" alt="Jogadores comemorando vitória" loading="lazy" />
+            </div>
+            <div class="news">
+              <h3>Nova contratação</h3>
+              <p>Conheça o novo atacante vindo da base do Real Madrid, Alex Santino.</p>
+              <img src="imagens/contratacao.png" alt="Alex Santino apresentado com a camisa do time" loading="lazy" />
+            </div>
+            <div class="news">
+              <h3>Expulsão</h3>
+              <p>Albert Vanheir foi expulso no jogo deste sábado após jogar uma garrafinha de água no juiz e o chamar de careca feio.</p>
+              <img src="imagens/expulso.png" alt="Treinador recebendo cartão vermelho do árbitro" loading="lazy" />
+            </div>
+            <div class="news">
+              <h3>Lesão do Jogador</h3>
+              <p>O jogador João Silva sofreu uma lesão no joelho e ficará fora por 6 meses.</p>
+              <img src="imagens/lesao.png" alt="João Silva recebendo atendimento médico no campo" loading="lazy" />
+            </div>
+            <div class="news">
+              <h3>Classificação</h3>
+              <p>Sunset Titans garantem vaga no Mundial de Clubes</p>
+              <img src="imagens/conquista.png" alt="Time levantando troféu de classificação" loading="lazy" />
+            </div>
+            <div class="news">
+              <h3>Treino aberto</h3>
+              <p>Venha conhecer os jogadores e participar de um treino aberto!</p>
+              <img src="imagens/treino.jpg" alt="Jogadores treinando no campo" loading="lazy" />
+        </div>
+      </section>
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações:</p>
+        <p>Email: <a href="mailto:contato@sunsettitans.com">contato@sunsettitans.com</a></p>
+        </section>
+
+  </main>
+
+  <div id="cart" aria-live="polite"> <h3>Carrinho</h3>
+    <ul id="cart-items">
+        <li>Seu carrinho está vazio.</li>
+    </ul>
+    <p>Total: R$ <span id="cart-total">0.00</span></p>
+    <button onclick="checkout()">Finalizar Compra</button>
+  </div>
+
+  <div id="cart-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <p id="cart-message">Item adicionado ao carrinho!</p>
+      <button onclick="closeModal('cart-modal')">Fechar</button>
+    </div>
+  </div>
+
+  <div id="joinModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <p id="joinMessage"></p>
+      <button onclick="closeModal('joinModal')">Fechar</button>
+    </div>
+  </div>
+
+  <div id="loginModal" class="modal" aria-hidden="true">
+      <div class="modal-content login-modal-content">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="Digite seu e-mail" />
+        </div>
+        <div>
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required placeholder="Digite sua senha" />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+       <button type="button" onclick="closeModal('loginModal')">Fechar</button>
+       <p id="loginMsg" aria-live="assertive"></p>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p>&copy; <span id="currentYear">2025</span> Sunset Titans. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
